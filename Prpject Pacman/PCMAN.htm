@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>PACMAN Game!!</title>
+    <link rel="stylesheet" href="PACMAN.css">
+
+</head>
+
+
+<body>
+    
+    <body style="background-image:url('PacmanADD/BACK1.jpg');background-repeat:initial"></body>
+
+    <img src="PacmanADD/LOGO.png" height="120">
+    <br/>
+
+  <img src="PacmanADD/NAME.png" height="70">
+    <br/>
+    <img src="PacmanADD/SCORE1.jpeg" onclick="lblScore()" height="20"/> <input id="lblScore" type="text">
+    <!-- <br>  -->
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="PacmanADD/time.png" onclick="lblTime()" height="21"/> <input id="lblTime" type="text">
+    <br/>
+   <audio controls style="display: none" id="STARTGAMESound"><source src="Osound/STARTGAME.mp3" type="audio/mpeg"> </audio>
+
+    <audio controls style="display: none" id="WinSound" preload="auto"><source src="Osound/Win.mp3" type="audio/mpeg">
+        This browser did not suppor the audio element.
+        </audio>
+
+    <canvas id="canvas" height="600" width="600" style="border:5px solid rgb(242, 151, 151);"></canvas>
+
+
+    <script>
+        var fired = false;
+        addEventListener("keydown", function(e){
+            if (!fired){
+                fired = true;
+                document.getElementById('STARTGAMESound').play();
+            }
+        });
+        addEventListener("keyup", function(e){
+            fired = false;
+        });
+           </script>
+
+
+</body>
+
+<script src="PACMAN.js"></script>
+
+</html>
